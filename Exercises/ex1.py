@@ -1,17 +1,40 @@
-import decimal as de
-array = [1,2,3,4,5]
-print(all(array))
+import sys
 
-number_array = [1,2,3,4,5]
+numbers = [1, 2, 3, 4, 5]
+strings_lists = ['a', 'b', 'c']
 
+print(any(numbers))
 
-de.getcontext().prec = len(number_array)
+print(bool())
 
-for i in range(1,11):
-    number_array.append(i)
+my_string = "coding's345"
 
-
-array = range(1,11)
-print(array)
+print(my_string.isdigit())
 
 
+## BIN()
+## Return the binary representation of an integer.
+
+print(bin(1))
+
+# BREAKPOINT()
+# STOP AT THE BREAKPOINT LINE TO DEBUGGING
+
+## breakpoint()
+
+#BYTEARRAY()
+
+print(bytearray(numbers))
+
+#BYTE()
+
+print(bytes(numbers))
+
+# Callable()
+
+print(callable(numbers))
+
+# chr()
+
+x = chr(523)
+print("chr() function: " + x)
