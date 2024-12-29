@@ -38,3 +38,42 @@ print(callable(numbers))
 
 x = chr(523)
 print("chr() function: " + x)
+
+# ClassMethod()
+
+class Student:
+
+    total_student = 0
+
+    def __init__(self, name, gpa):
+        self.name = name
+        self.gpa = gpa
+        Student.total_student+=1
+
+    @classmethod
+    def student_count(cls):
+        return f'Total # students: {cls.total_student}'
+
+
+print(f'Total students: ', Student.student_count())
+
+John = Student('John', '2.74')
+
+# Compile()
+
+# Complex()
+x = complex('5')
+print(f'Complex {x}')
+
+# Delattr()
+
+delattr(John,'name')
+
+print(John.gpa)
+
+#dict()
+
+schools = dict({'1': 1})
+print(schools.get('2', 'Not found'))
+
+# dir()
