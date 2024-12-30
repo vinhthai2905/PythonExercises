@@ -77,3 +77,69 @@ schools = dict({'1': 1})
 print(schools.get('2', 'Not found'))
 
 # dir()
+# Return list of things in current scope
+
+dict()
+print(dir(John))
+
+print('Get attribute for John: ' + John.__getattribute__('gpa'))
+
+def greet(**kwargs):
+    for key, value in kwargs.items():
+        kwargs.items()
+        print(f"{key}: {value}")
+
+greet(name="Alice", age=25, city="New York")
+
+# DivMod()
+
+print(divmod(12,3))
+
+from typing import TypeVar, List
+
+T = TypeVar('T')
+
+def element(items: List[T]) -> T:
+    return items[0]
+
+# Usage
+print(element([1, 2, 3]))
+print(element(['a', 'b', 'c']))
+
+
+#Enumarate()
+
+number_list = enumerate(numbers, 0)
+
+number_list_2 = dict(a=1, b=2, c=3)
+
+
+print(list(number_list_2.values()))
+
+# Filter()
+
+# Define a function that returns True for even numbers
+def is_even(num):
+    return bool(num % 2 == 0)
+
+# List of numbers
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+# Use filter() to get even numbers
+even_numbers = filter(is_even, numbers)
+
+# Convert the filter object to a list and print it
+print(list(even_numbers))
+
+## Float()
+
+x = float()
+
+## Format()
+
+
+name = "Alice"
+age = 30
+
+formatted_string = "Name: {}, Age: {}".format(name, age)
+print(formatted_string)  # Output: Name: Alice, Age: 30
