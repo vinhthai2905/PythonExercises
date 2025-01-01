@@ -91,11 +91,12 @@ def greet(**kwargs):
 
 greet(name="Alice", age=25, city="New York")
 
+
 # DivMod()
 
 print(divmod(12,3))
 
-from typing import TypeVar, List
+from typing import TypeVar, List, FrozenSet
 
 T = TypeVar('T')
 
@@ -143,3 +144,69 @@ age = 30
 
 formatted_string = "Name: {}, Age: {}".format(name, age)
 print(formatted_string)  # Output: Name: Alice, Age: 30
+
+## Frozenset()
+# Same thing as set but immutable
+
+numbers_set = frozenset([1,2,3,4,5])
+
+print('Set of numbers: ', numbers_set)
+
+read_only: FrozenSet[str] = frozenset({'read'})
+read_write: FrozenSet[str] = frozenset({'read', 'write'})
+admin: FrozenSet[str] = frozenset({'read', 'write', 'delete'})
+
+roles: dict[FrozenSet[str], str] = {
+    read_only: 'Viewer',
+    read_write: 'Editor',
+    admin: 'Administrator'
+}
+
+permissions: frozenset[str] = frozenset({'write', 'read'})
+role: str = roles.get(permissions, 'Unknown')
+
+print('The current role is:', role)
+
+egg_sandwich_ingredient: frozenset[str] = frozenset({'bread', 'eggs'})
+beef_sandwich_ingredient: frozenset[str] = frozenset({'bread', 'beefs'})
+
+recipes : dict[FrozenSet[str], str] = {
+    egg_sandwich_ingredient: 'Egg Sandwich',
+    beef_sandwich_ingredient: 'Beef Sandwich'
+}
+
+user_recipe = frozenset({'bread', 'eggs'})
+
+print('The user.s recipe:', recipes.get(user_recipe, 'Not found'))
+## Getattr()
+
+print('GPA of John is:', getattr(John, 'gpa'))
+
+#Global
+
+print('All available variables: ', globals())
+
+#Hasattr()
+
+if hasattr(John, 'gpa'):
+    print('Yes, John do have gpa attr')
+
+#Hash()
+
+print('The value of this object: ', hash(numbers_set))
+print(id(number_list))
+
+#Help()
+
+#Hex()
+
+#id()
+
+#int
+
+#isInstance
+
+test = (1,2,3,4)
+print(isinstance(John, Student))
+
+#isSubclass()
