@@ -210,3 +210,62 @@ test = (1,2,3,4)
 print(isinstance(John, Student))
 
 #isSubclass()
+
+#iter
+
+test_string = {
+    'name' : 'Thai',
+    'age' : '25'
+}
+
+test_int = {
+    1: 'Thai',
+    2: '25'
+}
+
+
+new_iter = iter(test_string)
+
+
+class Blog:
+    number_of_blogs = 0
+
+    def __init__(self):
+        self._blog_lists = []
+
+    def add_posts_to_list(self, blogs_list: List[str]):
+        self._blog_lists.extend(blogs_list)
+        Blog.number_of_blogs += self._blog_lists.__len__()
+
+    def get_blogs_list(self) -> List[str]:
+        return self._blog_lists
+
+    def __iter__(self):
+        return BlogIterator(self)
+
+    @staticmethod
+    def get_number_of_blogs():
+        return Blog.number_of_blogs
+
+
+class BlogIterator:
+    def __init__(self, blogs: Blog):
+        self._blogs = blogs
+        self._current = 0
+        self.test = blogs.get_blogs_list()
+
+    def __next__(self):
+        posts = self._blogs.get_blogs_list()
+
+
+new_list = Blog()
+
+new_list.add_post(['1', '2', '3'])
+
+print(new_list.get_blogs())
+
+test_iter_new = new_list.__iter__()
+
+print(test_iter_new.test)
+
+
