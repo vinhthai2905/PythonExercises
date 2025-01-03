@@ -1,4 +1,4 @@
-import sys
+import typing
 
 numbers = [1, 2, 3, 4, 5]
 strings_lists = ['a', 'b', 'c']
@@ -91,11 +91,12 @@ def greet(**kwargs):
 
 greet(name="Alice", age=25, city="New York")
 
+
 # DivMod()
 
 print(divmod(12,3))
 
-from typing import TypeVar, List
+from typing import TypeVar, List, FrozenSet
 
 T = TypeVar('T')
 
@@ -143,3 +144,166 @@ age = 30
 
 formatted_string = "Name: {}, Age: {}".format(name, age)
 print(formatted_string)  # Output: Name: Alice, Age: 30
+
+## Frozenset()
+# Same thing as set but immutable
+
+numbers_set = frozenset([1,2,3,4,5])
+
+print('Set of numbers: ', numbers_set)
+
+read_only: FrozenSet[str] = frozenset({'read'})
+read_write: FrozenSet[str] = frozenset({'read', 'write'})
+admin: FrozenSet[str] = frozenset({'read', 'write', 'delete'})
+
+roles: dict[FrozenSet[str], str] = {
+    read_only: 'Viewer',
+    read_write: 'Editor',
+    admin: 'Administrator'
+}
+
+permissions: frozenset[str] = frozenset({'write', 'read'})
+role: str = roles.get(permissions, 'Unknown')
+
+print('The current role is:', role)
+
+egg_sandwich_ingredient: frozenset[str] = frozenset({'bread', 'eggs'})
+beef_sandwich_ingredient: frozenset[str] = frozenset({'bread', 'beefs'})
+
+recipes : dict[FrozenSet[str], str] = {
+    egg_sandwich_ingredient: 'Egg Sandwich',
+    beef_sandwich_ingredient: 'Beef Sandwich'
+}
+
+user_recipe = frozenset({'bread', 'eggs'})
+
+print('The user.s recipe:', recipes.get(user_recipe, 'Not found'))
+## Getattr()
+
+print('GPA of John is:', getattr(John, 'gpa'))
+
+#Global
+
+print('All available variables: ', globals())
+
+#Hasattr()
+
+if hasattr(John, 'gpa'):
+    print('Yes, John do have gpa attr')
+
+#Hash()
+
+print('The value of this object: ', hash(numbers_set))
+print(id(number_list))
+
+#Help()
+
+#Hex()
+
+#id()
+
+#int
+
+#isInstance
+
+test = (1,2,3,4)
+print(isinstance(John, Student))
+
+#isSubclass()
+
+#iter
+
+test_string = {
+    'name' : 'Thai',
+    'age' : '25'
+}
+
+test_int = {
+    1: 'Thai',
+    2: '25'
+}
+
+
+new_iter = iter(test_string)
+
+
+class Blog:
+    number_of_blogs = 0
+
+    def __init__(self):
+        self._blog_lists = []
+
+    def add_posts_to_list(self, blogs_list: List[str]):
+        self._blog_lists.extend(blogs_list)
+        Blog.number_of_blogs += self._blog_lists.__len__()
+
+    def get_blogs_list(self) -> List[str]:
+        return self._blog_lists
+
+    def __iter__(self):
+        return BlogIterator(self)
+
+    @staticmethod
+    def get_number_of_blogs():
+        return Blog.number_of_blogs
+
+
+class BlogIterator:
+    def __init__(self, blogs: Blog):
+        self._blogs = blogs
+        self._current = 0
+        self.test = blogs.get_blogs_list()
+
+    def __next__(self):
+        posts = self._blogs.get_blogs_list()
+
+class GetItemOnly:
+    def __init__(self, data: List[int]):
+        self.data = data
+
+    def __getitem__(self, index):
+        if index < len(self.data):
+            return self.data[index]
+        else:
+            raise IndexError  # Required for iteration to stop
+
+
+new_list = Blog()
+
+
+
+new_list.add_posts_to_list(['1', '2', '3'])
+
+print(new_list.get_blogs_list())
+
+test_iter_new = iter(new_list)
+
+print(next(test_iter_new))
+
+#len()
+
+list()
+
+#Local()
+
+print(locals())
+
+# map()
+
+list_test = [1,2,3,4,5]
+
+
+
+mapping = map(lambda x: x*2, list_test)
+
+
+print(list(mapping))
+
+# max()
+
+list_1 = [1, 2, 3, 4, 5]
+list_2 = [7, 8, 9, 10, 11]
+print(max(list_1, list_2))
+
+# MemoryView()
+
