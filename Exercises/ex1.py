@@ -1,4 +1,4 @@
-import sys
+import typing
 
 numbers = [1, 2, 3, 4, 5]
 strings_lists = ['a', 'b', 'c']
@@ -257,15 +257,53 @@ class BlogIterator:
     def __next__(self):
         posts = self._blogs.get_blogs_list()
 
+class GetItemOnly:
+    def __init__(self, data: List[int]):
+        self.data = data
+
+    def __getitem__(self, index):
+        if index < len(self.data):
+            return self.data[index]
+        else:
+            raise IndexError  # Required for iteration to stop
+
 
 new_list = Blog()
 
-new_list.add_post(['1', '2', '3'])
 
-print(new_list.get_blogs())
 
-test_iter_new = new_list.__iter__()
+new_list.add_posts_to_list(['1', '2', '3'])
 
-print(test_iter_new.test)
+print(new_list.get_blogs_list())
 
+test_iter_new = iter(new_list)
+
+print(next(test_iter_new))
+
+#len()
+
+list()
+
+#Local()
+
+print(locals())
+
+# map()
+
+list_test = [1,2,3,4,5]
+
+
+
+mapping = map(lambda x: x*2, list_test)
+
+
+print(list(mapping))
+
+# max()
+
+list_1 = [1, 2, 3, 4, 5]
+list_2 = [7, 8, 9, 10, 11]
+print(max(list_1, list_2))
+
+# MemoryView()
 
