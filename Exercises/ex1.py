@@ -1,4 +1,6 @@
 import typing
+import inspect
+
 
 numbers = [1, 2, 3, 4, 5]
 strings_lists = ['a', 'b', 'c']
@@ -45,19 +47,32 @@ class Student:
 
     total_student = 0
 
-    def __init__(self, name, gpa):
-        self.name = name
+    def __init__(self, student_name, gpa):
+        self.name = student_name
         self.gpa = gpa
         Student.total_student+=1
+
+    @property
+    def get_student_name(self):
+        return 'This is my name', self.name
+
+    def set_student_name(self):
+        self.__setattr__('name', name)
+        self.name = name
+
+    def del_student_name(self):
+        self.__delattr__('name')
 
     @classmethod
     def student_count(cls):
         return f'Total # students: {cls.total_student}'
 
-
 print(f'Total students: ', Student.student_count())
 
+
 John = Student('John', '2.74')
+
+
 
 # Compile()
 
@@ -306,4 +321,64 @@ list_2 = [7, 8, 9, 10, 11]
 print(max(list_1, list_2))
 
 # MemoryView()
+
+#min()
+
+## object()
+
+a = object()
+
+## oct()
+
+print('The oct number of this is: ', oct(2))
+
+# open()
+
+# ord()
+print('Testing ord ord() function', ord('t'))
+
+# pow()
+
+# property
+
+property()
+
+class StudentK:
+    def __init__(self, first_name, last_name):
+        self.first_name = first_name
+        self.last_name = last_name
+
+    @property
+    def email(self):
+        return self.first_name + '-' + self.last_name + '@kteam.com'
+
+    @property
+    def full_name(self):
+        return '{} {}'.format(self.first_name, self.last_name)
+
+    @full_name.setter
+    def full_name(self, new_full_name):
+        new_first_name, new_last_name = new_full_name.split(' ')
+        self.first_name = new_first_name
+        self.last_name = new_last_name
+
+student_A = StudentK('Tran', 'Long')
+
+student_A.first_name = 'Nguyen'
+student_A.last_name = 'Thai'
+
+print(student_A.first_name)
+print(student_A.last_name)
+print(student_A.email)
+print(student_A.full_name)
+
+student_A.full_name = 'Vinh Thai'
+
+print(student_A.first_name)
+print(student_A.last_name)
+print(student_A.email)
+print(student_A.full_name)
+
+
+
 
