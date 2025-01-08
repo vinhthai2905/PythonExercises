@@ -1,6 +1,6 @@
 import typing
 import inspect
-
+from collections.abc import Sequence
 
 numbers = [1, 2, 3, 4, 5]
 strings_lists = ['a', 'b', 'c']
@@ -379,6 +379,68 @@ print(student_A.last_name)
 print(student_A.email)
 print(student_A.full_name)
 
+# range()
+
+list_3 = list(range(0,4))
+
+print(list_3)
+
+# repr()
+
+
+print(repr(John))
+
+#reversed()
+
+list_reversed = list(reversed(list_3))
+
+print(list_reversed)
+
+# round()
+
+# set()
+
+# setattr()
+
+# slice()
+
+test_string_2 = [0, 1, 2, 3, 4, 5, 6]
+sliced_string = slice(0, 6, 2)
 
 
 
+
+print(test_string_2[-1::-1])
+
+# sorted()
+
+new_sorted = sorted(test_string_2, key= lambda c: -c+1)
+
+# staticmethod()
+
+# str()
+
+
+str()
+
+# sum()
+
+sum_list = sum(test_string_2)
+print(sum_list)
+
+# super()
+
+
+# tuple()
+
+new_tuple_list = tuple(test_string_2)
+print(new_tuple_list)
+
+# vars()
+print(vars(John))
+
+# zip()
+
+zipped = list(zip([1,2], [3,4]))
+
+print(zipped)
