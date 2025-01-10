@@ -14,6 +14,9 @@ combined_strings = ' '.join(coding_strings)
 print(f'Fully combined string: {combined_strings}')
 
 # Declare a variable named company and assign it to an initial value "Coding For All".
+company = 'Coding for all'
+print(f'Name of the company: {company}')
+
 # Print the variable company using print().
 # Print the length of the company string using len() method and print().
 # Change all the characters to uppercase letters using upper() method.
