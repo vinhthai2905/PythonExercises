@@ -14,5 +14,9 @@ print(add_two_numbers(3, 7))
 # Declare a function named print_list. It takes a list as a parameter and it prints out each element of the list.
 numbers_list = [1, 2, 3, 4, 5, 6]
 
+def print_list(number_list):
+    for number in number_list:
+        print(number, end=' ')
 
+print(print_list(numbers_list))
 # Declare a function named reverse_list. It takes an array as a parameter and it returns the reverse of the array (use loops).
