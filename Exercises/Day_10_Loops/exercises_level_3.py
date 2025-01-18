@@ -1,4 +1,3 @@
-
 countries = [
   'Afghanistan',
   'Albania',
