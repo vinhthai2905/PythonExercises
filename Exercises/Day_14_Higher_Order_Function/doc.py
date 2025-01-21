@@ -15,6 +15,7 @@ def outer_function(x):
         return x + y
     return inner_function
 
+
 # Using the outer_function to create a new function
 add_five = outer_function(5)
 print(add_five)
