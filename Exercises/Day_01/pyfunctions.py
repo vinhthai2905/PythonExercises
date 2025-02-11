@@ -2,6 +2,7 @@ import typing
 import inspect
 from collections.abc import Sequence
 
+
 numbers = [1, 2, 3, 4, 5]
 strings_lists = ['a', 'b', 'c']
 
