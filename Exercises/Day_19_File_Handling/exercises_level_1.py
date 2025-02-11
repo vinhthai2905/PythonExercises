@@ -19,6 +19,7 @@ with open('./ex_1/michelle_obama_speech.txt', mode='r+', encoding='utf-8') as mi
     word_count = 0
     list_speech = michelle_file.readlines()
     for line in list_speech:
+        breakpoint()
         if len(line) - line.count(' ') == 1:
             continue
         else:

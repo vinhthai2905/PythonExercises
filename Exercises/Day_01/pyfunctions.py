@@ -168,11 +168,11 @@ numbers_set = frozenset([1,2,3,4,5])
 
 print('Set of numbers: ', numbers_set)
 
-read_only: FrozenSet[str] = frozenset({'read'})
-read_write: FrozenSet[str] = frozenset({'read', 'write'})
-admin: FrozenSet[str] = frozenset({'read', 'write', 'delete'})
+read_only: frozenset[str] = frozenset({'read'})
+read_write: frozenset[str] = frozenset({'read', 'write'})
+admin: frozenset[str] = frozenset({'read', 'write', 'delete'})
 
-roles: dict[FrozenSet[str], str] = {
+roles: dict[frozenset[str], str] = {
     read_only: 'Viewer',
     read_write: 'Editor',
     admin: 'Administrator'
